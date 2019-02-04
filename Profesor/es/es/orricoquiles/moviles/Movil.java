@@ -1,7 +1,6 @@
 package es.orricoquiles.moviles;
 
 import javax.swing.*;
-import java.io.File;
 import java.math.BigDecimal;
 
 public class Movil {
@@ -65,7 +64,7 @@ public class Movil {
 
     public static void main(String[] args) {
         Movil lumia=new Movil("Lumia","950XL",BigDecimal.valueOf(349.00),4,13.4,"lumia.jpg");
-        ESMovil.muestraMovil(lumia);
-        ESMovil.muestraMovil(ESMovil.leeMovil());
+        es.orricoquiles.moviles.ESMovil.muestraMovil(lumia);
+        es.orricoquiles.moviles.ESMovil.muestraMovil(es.orricoquiles.moviles.ESMovil.leeMovil());
     }
 }
