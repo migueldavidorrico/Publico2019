@@ -7,9 +7,26 @@ public class listaLetras {
     private static char[] lista = new char[TAMANYO];
     private static int indice = 0;
 
+    @Override
+    public String toString() {
+        return "listaLetras{}";
+    }
 
     public static void anyadir(char letra) {
         lista[indice++] = letra;
+    }
+
+    public static void anyadir(String palabra) {
+        /* Está la funcion que lo hace
+        for (char c
+                :palabra.toCharArray()){
+
+
+        }
+        */
+        for (int i = 0; i < palabra.length(); i++) {
+            anyadir(palabra.charAt(i));
+        }
     }
 
     public static String elementos() {
@@ -41,8 +58,20 @@ public class listaLetras {
         return true;
     }
 
+    public static boolean borrar(String palabra) {
+        boolean toda = true;
+        for (int i = 0; i < palabra.length(); i++) {
+            if (!borrar(palabra.charAt(i))) {
+                toda = false;
+            }
+        }
+        return toda;
+    }
+
+
+
     public static void main(String[] args) {
-        anyadir('a');
+        /*anyadir('a');
         anyadir('c');
         anyadir('r');
         anyadir('i');
@@ -57,5 +86,12 @@ public class listaLetras {
         System.out.println(borrar('s'));
         System.out.println(borrar('a'));
         System.out.println(elementos());
+        */
+        anyadir("Perico");
+        System.out.println(elementos());
+        borrar("rice");
+        System.out.println(elementos());
+
+
     }
 }
