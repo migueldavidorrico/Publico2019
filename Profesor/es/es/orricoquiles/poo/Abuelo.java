@@ -9,6 +9,8 @@ public class Abuelo {
     public static void main(String[] args) {
         int[] a = {0, 6, 7, 8};
         System.out.println(a);
+        Acceso nuevo = new RecienInstalado("admin", "df");
+
     }
 }
 

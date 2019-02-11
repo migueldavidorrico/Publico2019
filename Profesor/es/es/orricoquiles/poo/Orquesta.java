@@ -1,18 +1,37 @@
 package es.orricoquiles.poo;
 
+import java.util.ArrayList;
+
 public class Orquesta {
     public static void main(String[] args) {
-        Instrumento[] orquesta = new Instrumento[5];
-        orquesta[0] = new Flauta();
-        orquesta[1] = new Flauta();
-        orquesta[2] = new Flauta();
-        orquesta[3] = new Clarinete();
-        orquesta[4] = new Violin();
-
+        ArrayList<Instrumento> orquesta = new ArrayList<>();
+        orquesta.add(new Flauta());
+        orquesta.add(new Flauta());
+        orquesta.add(new Flauta());
+        orquesta.add(new Clarinete());
+        orquesta.add(new Clarinete());
+        orquesta.add(new Clarinete());
+        orquesta.add(new Violin());
+        orquesta.add(new Violin());
+        orquesta.add(new Violin());
         for (Instrumento i :
                 orquesta) {
+            if (i.tipo == Instrumento.Tipo.VIENTO) {
+                System.out.print("VIENTO: ");
+            }
             System.out.println(i);
         }
+//        Instrumento[] orquesta = new Instrumento[5];
+//        orquesta[0] = new Flauta();
+//        orquesta[1] = new Flauta();
+//        orquesta[2] = new Flauta();
+//        orquesta[3] = new Clarinete();
+//        orquesta[4] = new Violin();
+//
+//        for (Instrumento i :
+//                orquesta) {
+//            System.out.println(i);
+//        }
 
     }
 
