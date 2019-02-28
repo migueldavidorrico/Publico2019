@@ -9,7 +9,7 @@ public class LeeUnaFrase {
         frase = JOptionPane.showInputDialog("introduce una frase");
         numerodecarecteres = frase.length();
 
-        System.out.println("\nWhat is your message? k" + frase);
+        System.out.println("\nWhat is your message? " + frase);
         System.out.println("\nYour message is " + numerodecarecteres + " characters long.");
         System.out.println("The first character is at position 0 and is '" + frase.charAt(0) + "'.");
         System.out.println("The last character is at position " + (numerodecarecteres - 1) + " and is '" + frase.charAt(numerodecarecteres - 1)+ "'.");
