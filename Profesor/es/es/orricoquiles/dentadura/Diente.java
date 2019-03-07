@@ -3,6 +3,10 @@ package es.orricoquiles.dentadura;
 public class Diente {
     private EstadoDiente estado = EstadoDiente.BUENO;
 
+    public int getPrecio() {
+        return 0;
+    }
+
     public EstadoDiente getEstado() {
         return estado;
     }
@@ -62,21 +66,31 @@ abstract class DientePostizo extends Diente {
 
 
 class DienteMetalico extends DientePostizo {
-    String metal;
+    TipoMetal tipoMetal;
 
     @Override
     public String toString() {
-        return super.toString() + " DE: " + this.metal;
+        return super.toString() + " DE: " + this.tipoMetal;
     }
 
-    public DienteMetalico(String metal) {
-        this.metal = metal;
+    @Override
+    public int getPrecio() {
+        return this.tipoMetal.getPrecio();
+    }
+
+    public DienteMetalico(TipoMetal metal) {
+        this.tipoMetal = metal;
         this.duracion = new DuracionAnyos(5);
     }
 }
 
 class DienteCeramico extends DientePostizo {
     TipoCeramico tipoCeramico;
+
+    @Override
+    public int getPrecio() {
+        return 15000;
+    }
 
     @Override
     public String toString() {

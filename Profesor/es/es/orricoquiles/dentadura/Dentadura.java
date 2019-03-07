@@ -1,7 +1,17 @@
 package es.orricoquiles.dentadura;
 
-public class Dentadura {
+public class Dentadura implements Comparable<Dentadura> {
     Diente[][] dientes;
+
+    public int getPrecio() {
+        int precio = 0;
+        for (int i = 0; i < dientes.length; i++) {
+            for (int j = 0; j < dientes[i].length; j++) {
+                precio += dientes[i][j].getPrecio();
+            }
+        }
+        return precio;
+    }
 
     public void ponerMalo(PosicionesDientes pos) {
         this.dientes[pos.getFila()][pos.getColumna()].setEstado(EstadoDiente.MALO);
@@ -9,7 +19,7 @@ public class Dentadura {
 
     }
 
-    public void ponerMetalico(PosicionesDientes pos, String metal) {
+    public void ponerMetalico(PosicionesDientes pos, TipoMetal metal) {
         this.dientes[pos.getFila()][pos.getColumna()] = new DienteMetalico(metal);
     }
 
@@ -35,7 +45,7 @@ public class Dentadura {
             }
             salida += "\n";
         }
-        salida += "-----------------------------------\n";
+        salida += "----------------------------------- " + this.getPrecio() + "\n";
         return salida;
     }
 
@@ -51,4 +61,14 @@ public class Dentadura {
 
     }
 
+    @Override
+    public int compareTo(Dentadura o) {
+        return Integer.compare(o.getPrecio(), this.getPrecio());
+    }
 }
+
+//Un cerámico cuesta 150 €
+//Un metálico de Titanio cuesta 200€ y de RODIO cuesta 1000€
+
+//Me gustaría obtener listados de dentaduras ordenadas por su precio
+
